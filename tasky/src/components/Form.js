@@ -2,7 +2,14 @@ import React from "react";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+
 const AddTaskForm = (props) => {
+
+ 
 
   return (
     <div>
@@ -33,6 +40,21 @@ const AddTaskForm = (props) => {
           onChange={(event) => props.change(event)}
         />
       </div>
+
+<div>
+<Select
+          name="priority"
+          id="demo-simple-select"
+          
+          label="Priority"
+          onChange={(event) => props.change(event)}
+        >
+          <MenuItem value={"Low"}>Low</MenuItem>
+          <MenuItem value={"Medium"}>Medium</MenuItem>
+          <MenuItem value={"High"}>High</MenuItem>
+        </Select>
+</div>
+
       <div>
         <TextField
           name="description"
